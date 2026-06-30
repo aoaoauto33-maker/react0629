@@ -1,3 +1,15 @@
+mkdir react-training && cd react-training
+左が成功してから右をやってね
+mkdir=フォルダを作る、touch=ファイルを作る
+
+
+App.tsxは親コンポーネント
+main.tsxは触らないでね
+
+
+「実行は npm run dev」
+
+
 DOMってなに？(document object model)
 画面そのもの
 ツリー構造で、変更点だけを出力する仕組み

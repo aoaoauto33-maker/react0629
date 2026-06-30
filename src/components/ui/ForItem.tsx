@@ -1,7 +1,10 @@
+// -3- コンポーネント分離
+// -4- リストの絞り込み
 import type { Item } from "./ForList";
 
 type ForItemProps = {
     item: Item;
+
 };
 
 export default function ForItem({ item }: ForItemProps) {
