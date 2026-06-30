@@ -1,0 +1,89 @@
+DOMってなに？(document object model)
+画面そのもの
+ツリー構造で、変更点だけを出力する仕組み
+Reactでは仮想DOMを作って、変更点だけ仮想DOMを書き換えて、ブラウザのリアルDOMに送る
+
+
+
+
+
+JSX(TSX)の基本
+js(ts)ファイルの中にhtmlを書いているもの
+
+ルール１
+二つの要素を持っていたら<di>タグなどで一つにまとめてあげる
+<div>が嫌だったら<Fragment>や<>という書き方もできる
+
+
+ルール２
+TSXではhtmlの属性にclassは使えないので、classNameを使うこと
+
+ルール３
+コメントアウトは//か/* */
+
+ルール４
+javaScriptを埋め込むには{}を利用する
+
+基本cssは外部ファイルを用意する
+
+
+
+
+
+
+<コンポーネント(TSXファイル、htmlのこと)>
+ページを構成するUI部品
+これから.htmlは作らず、.tsxを使う
+
+・props = 外から値を受け取るもの、引数、親から子に値を渡す窓口
+・state = 変化していく状態を管理、ローカル変数
+
+-例題-
+type HelloProps = {
+    name: string;
+};
+
+export default function Hello({ name }: HelloProps) {
+    return (
+        <div>こんにちは、{name}さん</div>　　←子コンポーネント
+    );
+}
+
+
+import Hello from './Hello';
+
+createRoot(document.getElementById('root')!).render(
+    <Hello name="Tom" />     ←親コンポーネント
+);
+
+
+・文字列以外にも渡せる
+<Hello name={100} />                            数値 
+<Hello name={['Tom', 'Jhon', 'Bob']} />         配列 
+<Hello name={() => { console.log('Tom'); }} />  関数 
+<Hello name={{ name: 'Tom', age: 30 }} />       オブジェクト 
+
+
+<イベント>
+状態を変化させるトリガー
+
+
+
+state
+useState関数
+const [state, setState] = useState(initialState)
+-------------------------------------------------------
+state: State値を格納する変数
+setState: State値を更新するための関数
+initialState: Stateの初期値
+
+
+
+
+コンポーネントの分離
+コンポーネントを切り出すことで再利用性を高める
+よくわからん
+
+
+リストのソート
+キャラソートに使える？

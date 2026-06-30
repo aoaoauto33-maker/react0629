@@ -1,0 +1,17 @@
+import { useState } from "react";
+
+type props = {
+    init: number
+}
+
+export default function StateBasic({ init }: props) {
+    const [count, setCount] = useState(init);
+
+    const handleClick = () => setCount(count +1);
+    return (
+        <>
+        <button onClick = {handleClick}>カウント</button>
+        <p>{count}回クリックされました</p>
+        </>
+    )
+}
