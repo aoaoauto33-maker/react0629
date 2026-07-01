@@ -1,21 +1,25 @@
 // -3- コンポーネント分離
 // -4- リストの絞り込み
 import type { Item } from "./ForList";
+import Download from "./Download";
 
 type ForItemProps = {
     item: Item;
-
 };
 
 export default function ForItem({ item }: ForItemProps) {
     return (
         <>
-        <dt>
-            <a href="">
-                {item.title} ({item.price}円)
-            </a>
-        </dt>
-        <dd>{item.summary}</dd>
+            <dt>
+                <a href="">
+                    {item.title} ({item.price}円)
+                </a>
+            </dt>
+
+            <dd>
+                {item.summary}
+                {item.download && <Download isbn={item.isbn} />}
+            </dd>
         </>
     );
 }

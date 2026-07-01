@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>State Basic (Vanilla JS)</title>
+</head>
+<body>
+
+    <div id="state-basic-root1">
+        <button id="counter-btn1">カウント</button>
+        <p><span id="count-text1">0</span>回クリックされました</p>
+    </div>
+
+
+    <div id="state-basic-root2">
+        <button id="counter-btn2">カウント</button>
+        <p><span id="count-text2">0</span>回クリックされました</p>
+    </div>
+
+    <script>
+        // --- StateBasic コンポーネントの再現 ---
+
+        // 1. Propsの代わり（初期値の設定）
+        const props = {
+            init: 0 // ここで初期値を指定します
+        };
+
+        // 2. Stateの代わり（変数の定義と初期化）
+        let count = props.init;
+
+
+        const btnNum = [1,2];
+
+
+
+        // HTML要素の取得(ループ文で取得)
+        for(const num of btnNum){
+        const counterBtn = document.getElementById(`counter-btn${num}`);
+        const countText = document.getElementById(`count-text${num}`);
+
+        // 初期値を画面に反映
+        countText.textContent = count;
+
+        // 3. handleClickの代わり（イベントハンドラーと画面更新）
+        const handleClick = () => {
+            // カウント値をインクリメント (setCount(count + 1) に相当)
+            count += 1;
+            
+            // 画面の表示を更新（Reactの再レンダリングに相当）
+            countText.textContent = count;
+        };
+
+        // ボタンにクリックイベントをバインド
+        counterBtn.addEventListener('click', handleClick);
+
+
+    }
+    </script>
+</body>
+</html>

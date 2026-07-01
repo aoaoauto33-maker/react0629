@@ -48,25 +48,20 @@
 
 
 
-// -3- コンポーネント分離
-import './App.css'
-import ForList from './components/ui/ForList'
-import { books } from './datas/books';
+// // -3- コンポーネント分離
+// import './App.css'
+// import ForList from './components/ui/ForList'
+// import { books } from './datas/books';
 
-function App() {
-  return (
-    <>
-      <ForList src={books} />
-    </>
-  )
-}
+// function App() {
+//   return (
+//     <>
+//       <ForList src={books} />
+//     </>
+//   )
+// }
 
-export default App
-
-
-
-
-
+// export default App
 
 
 
@@ -85,3 +80,25 @@ export default App
 // }
 
 // export default App
+
+
+
+// -5- if文
+
+
+
+
+// -6- 即時関数
+import './App.css'
+import ForList from './components/ui/ForList'
+import { books } from './datas/books';
+
+function App() {
+  return (
+    <>
+      <ForList src={books}/>
+    </>
+  );
+}
+
+export default App

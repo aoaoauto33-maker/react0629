@@ -1,4 +1,4 @@
-import dl_icon from '../assets/dl.png';
+import dl_icon from '../../assets/dl.png';
 import type { Item } from './ForList';
 
 type DownloadProps = Pick<Item, 'isbn'>
