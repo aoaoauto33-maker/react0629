@@ -11,6 +11,7 @@ export default function ForItem2({ book }: ForItem2Props){
         <>
         <dt>
             <a href={`https://wings.msn.to/books/${book.isbn}/${book.isbn}.jpg`}>
+            {/* ここに書いたサイトに飛ぶ */}
             {book.title} ({book.price}円)
             </a>
         </dt>

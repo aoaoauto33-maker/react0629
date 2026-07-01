@@ -74,8 +74,41 @@
 
 
 
-// -6- 即時関数
-import ForItemInstantFunction from './ForItemInstantFunction.tsx';
+// // -6- 即時関数
+// import ForItemInstantFunction from './ForItemInstantFunction.tsx';
+
+// export type Item = {
+//     isbn: string;
+//     title: string;
+//     price: number;
+//     summary: string;
+//     download: boolean;
+// };
+
+// type ForListProps = {
+//     src: Item[];
+// };
+
+// export default function ForList({ src }: ForListProps) {
+//     return (
+//         <dl>
+//             {src.map((elem) => (
+//                 // 配列に対して、何かしらの処理をした後に、新たな配列を返す
+//                 <ForItemInstantFunction item={elem} key={elem.isbn} />
+//                 // item,keyはprops、keyは気にしない
+//             ))}
+//         </dl>
+//     );
+// }
+
+
+
+
+
+
+
+// -7- 三項演算子
+import IfItem2 from './ForItemInstantFunction.tsx';
 
 export type Item = {
     isbn: string;
@@ -84,17 +117,18 @@ export type Item = {
     summary: string;
     download: boolean;
 };
-  
+
 type ForListProps = {
     src: Item[];
 };
 
 export default function ForList({ src }: ForListProps) {
+    // {src}: ForListPropsは分割代入
     return (
         <dl>
             {src.map((elem) => (
                 // 配列に対して、何かしらの処理をした後に、新たな配列を返す
-                <ForItemInstantFunction item={elem} key={elem.isbn} />
+                <IfItem2 item={elem} key={elem.isbn} />
                 // item,keyはprops、keyは気にしない
             ))}
         </dl>

@@ -1,5 +1,7 @@
 // -1-
 // reactのuseStateというState(状態)を管理するためのフックを読み込む
+// useStateをimportしてから初めてstateが使える
+// useState関数は、二つの定数を入れることができる
 import { useState } from "react";
 
 // propsの型を定義
