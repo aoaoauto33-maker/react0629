@@ -130,6 +130,7 @@ export default function ForList({ src }: ForListProps) {
                 // 配列に対して、何かしらの処理をした後に、新たな配列を返す
                 <IfItem2 item={elem} key={elem.isbn} />
                 // item,keyはprops、keyは気にしない
+                // IfItem2が呼び出し元、itemは属性値
             ))}
         </dl>
     );

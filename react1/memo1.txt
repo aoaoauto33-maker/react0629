@@ -126,3 +126,57 @@ initialState: Stateの初期値
 
 
 即時関数
+
+
+
+children
+呼び出し元の要素(中身)も取得することができる = children
+Propsに含まれるのは、呼び出し元の要素の属性値だけでなく、呼び出し元の要素の配下コンテンツも可能
+これを使えば、呼び出し元であるタイトルの、配下コンテTンツのボタンなどを分けられる？
+
+childrenの中身同士は区別できない
+
+
+
+
+
+高度なイベント処理
+広告から遷移するみたいに、divにもonClickをつけることができる
+
+
+
+
+イベントオブジェクト
+イベントに関する情報を管理するためのオブジェクト
+
+
+
+キーイベントでキーを識別する
+React.KeyboardEvent<HTMLInputElement>　座標とかの情報しか入らない型
+
+command + shift + T で直前のsafariを復旧
+
+
+
+
+独自データ属性を利用する
+data-aaa
+e.currentTarget.dataset.aaa
+
+
+
+
+
+イベントの伝播を抑制する
+イベントがどんどん伝わっていく
+
+onClickCaptureにするとこの順番になる
+「#PARENT run」表示
+「#MY run」表示
+「#CHILD run」表示
+aタグのリンク先に遷移
+
+
+イベント規定の動作をキャンセル
+preventDefault()はブラウザが標準で行う挙動をキャンセル
+ページ遷移がキャンセルされ、alertの表示だけが行われる
