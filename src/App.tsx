@@ -4,6 +4,7 @@
 // import StateBasic from './StateBasic'
 
 
+
 // function App(){
 //   const [count, _] = useState(0)
 
@@ -236,23 +237,23 @@
 
 
 
-// -14-  イベントオブジェクト
-import EventMouse from './components/ui/EventMouse';
-import EventObject from './components/ui/EventObject';
+// // -14-  イベントオブジェクト
+// import EventMouse from './components/ui/EventMouse';
+// import EventObject from './components/ui/EventObject';
 
-export default function App(){
-  return(
-    <>
-    <EventObject />
-    <EventMouse 
-    alt='ロゴ画像'
-    defaultSrc='https://www.web-deli.com/image/linkbanner_l.gif'
-    afterSrc='https://www.web-deli.com/image/home_chara.gif'
-  />
+// export default function App(){
+//   return(
+//     <>
+//     <EventObject />
+//     <EventMouse 
+//     alt='ロゴ画像'
+//     defaultSrc='https://www.web-deli.com/image/linkbanner_l.gif'
+//     afterSrc='https://www.web-deli.com/image/home_chara.gif'
+//   />
    
-    </>
-  );
-}
+//     </>
+//   );
+// }
 
 
 
@@ -336,3 +337,79 @@ export default function App(){
 
 //   );
 // }
+
+
+
+
+
+
+
+
+
+
+// React基本
+// // -1- フォーム管理の基本
+// import StateForm from './components/ui/Reactkihon/StateForm';
+
+// export default function App(){
+//   return(
+//     <StateForm />
+//   );
+// }
+
+
+
+
+
+
+
+// // -2- useId関数
+// import StateForm from './components/ui/Reactkihon/StateForm';
+
+// export default function App(){
+//   return(
+//     <StateForm />
+//   );
+// }
+
+
+
+// -3- 自習
+
+
+
+
+
+// -4.1- 入力要素に応じたフォームの実装　-テキストエリア-
+// import FormTextarea from './components/ui/Reactkihon/FormTextarea';
+
+// export default function App(){
+//   return(
+//     <FormTextarea />
+//   );
+// }
+
+
+
+
+// // -4.2- 入力要素に応じたフォームの実装 -選択ボックス-
+// import FormSelect from './components/ui/Reactkihon/FormSelect';
+
+// export default function App(){
+//   return(
+//     <FormSelect />
+//   );
+// }
+
+
+
+
+
+// -4.3- 入力要素に応じたフォームの実装 -リストボックス-
+import FormList from "./components/ui/Reactkihon/FormList";
+
+export default function App(){
+  return(
+    <FormList />
+  );
+}
