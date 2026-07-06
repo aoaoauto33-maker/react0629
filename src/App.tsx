@@ -380,7 +380,7 @@
 
 
 
-// -4.1- 入力要素に応じたフォームの実装　-テキストエリア-
+// // -4.1- 入力要素に応じたフォームの実装　-テキストエリア-
 // import FormTextarea from './components/ui/Reactkihon/FormTextarea';
 
 // export default function App(){
@@ -405,11 +405,66 @@
 
 
 
-// -4.3- 入力要素に応じたフォームの実装 -リストボックス-
-import FormList from "./components/ui/Reactkihon/FormList";
+// // -4.3- 入力要素に応じたフォームの実装 -リストボックス-
+// import FormList from "./components/ui/Reactkihon/FormList";
+
+// export default function App(){
+//   return(
+//     <FormList />
+//   );
+// }
+
+
+
+
+
+// // ７月６日
+// // -4.4- 入力要素に応じたフォームの実装 -ラジオボタン-
+// import FormRadio from "./components/ui/Reactkihon/FormRadio";
+
+// export default function App(){
+//   return(
+//     <FormRadio />
+//   );
+// }
+
+
+
+
+
+// // -4.5- 入力要素に応じたフォームの実装 -チェックボックス-
+// import FormCheck from "./components/ui/Reactkihon/FormCheck";
+
+// export default function App(){
+//   return(
+//     <FormCheck />
+//   );
+// }
+
+
+
+
+
+
+
+// // -4.6- 入力要素に応じたフォームの実装 -チェックボックス複数選択-
+// import FormCheckMulti from "./components/ui/Reactkihon/FormCheckMulti";
+
+// export default function App(){
+//   return(
+//     <FormCheckMulti />
+//   );
+// }
+
+
+
+
+
+// -4.7- 入力要素に応じたフォームの実装 -ファイル入力ボックス-
+import FormFile from "./components/ui/Reactkihon/FormFile";
 
 export default function App(){
   return(
-    <FormList />
+    <FormFile />
   );
 }

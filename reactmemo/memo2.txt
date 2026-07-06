@@ -18,3 +18,20 @@ id属性やhtmlFor属性には望ましくない
 
 ・Uncontrolled Inputによるフォーム管理
 自習
+
+
+
+
+・Stateにおける構造化データの更新
+Stateをコピーしてその値を更新
+setFormを使って更新しないといけない(Reactだと認識されなくなるから)
+
+
+
+
+・スプレッド構文...
+let obj = { x: 1, y: 2 };
+let copyObj = { ...obj };　値渡し
+let copyobj = obj;じゃダメなの？ =>参照先が一緒になため、値を変更したらコピーも変更されちゃう　参照渡し
+
+
