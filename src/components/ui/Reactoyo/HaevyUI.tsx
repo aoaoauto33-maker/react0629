@@ -2,6 +2,8 @@
 function sleep(delay: number) {
     let start = Date.now();
     while (Date.now() - start < delay);
+    // delayの時間より短い間はループ(delay時間中はループ)
+    // 非同期ではないので、Reactの描画をブロックする重い処理の再現
 }
 
 type HeavyUIProps = {

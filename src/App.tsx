@@ -656,13 +656,54 @@
 
 
 
-// -5- variants
-// -5.2- 親子関係にある要素に適用する
-import MotionNestVariants from "./components/ui/Reactoyo/MotionNestVariants";
-import MotionVariants from "./components/ui/Reactoyo/MotionVariants";
+// // -5- variants
+// // -5.2- 親子関係にある要素に適用する
+// import MotionNestVariants from "./components/ui/Reactoyo/MotionNestVariants";
+// import MotionVariants from "./components/ui/Reactoyo/MotionVariants";
+
+// export default function App(){
+//   return(
+//     <MotionNestVariants />
+//   );
+// }
+
+
+
+
+
+// // -5.3- キーフレームによるアニメーション属性
+// import MotionFrame from "./components/ui/Reactoyo/MotionFrame";
+
+// export default function App(){
+//   return(
+//     <MotionFrame />
+//   );
+// }
+
+
+
+
+
+// // -6.1- ダイアログの実装
+// import PortalBasic from "./components/ui/Reactoyo/PortalBasic";
+
+// export default function App(){
+//   return(
+//     <>
+//     <div id="dialog"></div>
+//     <PortalBasic />
+//     </>
+//   );
+// }
+
+
+
+
+// -6.2- ErrorBoundary
+import ErrorRoot from "./components/ui/Reactoyo/ErrorRoot";
 
 export default function App(){
   return(
-    <MotionNestVariants />
+    <ErrorRoot />
   );
 }
