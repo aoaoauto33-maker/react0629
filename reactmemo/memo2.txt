@@ -35,3 +35,18 @@ let copyObj = { ...obj };　値渡し
 let copyobj = obj;じゃダメなの？ =>参照先が一緒になため、値を変更したらコピーも変更されちゃう　参照渡し
 
 
+
+
+・RHFとはフォームの値、エラー、送信処理をReactのStateを書かずに管理してくれるライブラリ
+register... バリデーションとか
+
+・独自でルールを追加したいとき
+validateをhtmlの方につけて、アロー関数を書くだけ
+<input
+  {...register("username", {
+    required: "ユーザー名は必須です",
+    validate: (value) =>
+      value.trim().length >= 3 || "3文字以上で入力してください",
+  })}
+/>　　　(trimは空白を取り除いているだけ)
+

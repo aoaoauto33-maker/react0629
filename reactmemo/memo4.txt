@@ -1,0 +1,127 @@
+---React応用---
+・Reactが元から用意しているものが組み込みコンポーネント
+日常的に使うのはFragment Suspense StrictMode
+StrictMode = べからずなコードを検出
+Suspense = 子コンポーネントのロード中にフォールバックを表示
+
+実務で本当に使う頻度ランキング
+Fragment
+Suspense
+StrictMode
+Profiler（計測時のみ）
+SuspenseList（限定的）
+
+
+DOM=HTMLのタグ
+
+
+コンポーネントの描画待ちを検知する　suspenseコンポーネント1
+読み込みが早いものから表示させて、遅いものは後から表示(非同期みたい)
+描画できない待ち状態を検知して、一時的にフォールバック(一時的な表示)を描画する
+>外部サービス(API)からデータを取得する必要がある
+>コンポーネント自体を実行時に遅延して読み込む（遅延ロード）
+
+lazy関数は、コンポーネントを使うときに初めて読み込むための仕組み
+普通のimportはページを開いた瞬間読み込まれるが、lazyは初期表示時には読み込まれない
+スクロールした瞬間に読み込んでくれる画像、とか
+遅延ロード(初期表示を軽くする)とSuspense(読み込めてない時別の表示をさせるもの)は別物
+import { lazy, Suspense } from 'react';
+
+const UserProfile = lazy(() => import('./UserProfile'));
+
+function App() {
+  return (
+    <Suspense fallback={<div>読み込み中...</div>}>
+      <UserProfile />
+      ここだけ何秒後かに表示される
+    </Suspense>
+  );
+}
+
+lazyはこう書く
+cons LazyButton = lazy(() => import('./Lazy'))
+
+
+
+
+・Profilerコンポーネント
+プロファイラーは「この画面、どれくらい重い？」を測るための道具
+その画面がどれくらい重いか測ってくれる
+contents = パフォーマンスを計測する対象
+onRender={handleRender}
+
+ProfilerOnRenderCallback Reactが持っている型
+6つの引数を受け取って何も返さない？型
+
+onRender = このコンポーネントが呼ばれた瞬間に、Reactから何秒かかったのか通知する関数
+Reactからの報告を受け取る窓口
+
+
+
+
+[コンポーネント開発でのスタイル定義]
+style属性、className属性
+cssはどう使えばいいのか？
+
+・css Modules(多分重要)
+一つのtsxファイルに対して一つのcssファイルを作る
+モジュール化されたcss(他のコンポーネントには影響を与えない安全性◎)
+「<コンポーネント名>.module.css」がルール
+呼び出してくるオブジェクト(styles)はなんでもいい
+メリット：React(Vite)が勝手にそれ用の名前をつけてくれるので他に影響がない
+デメリット：大規模すぎなければそんなにない
+
+
+・グローバルスタイル
+全てのコンポーネントに同じcssを適用させたい場合、:global(.head)と書く
+コンポーネント側はclassName="head"と普通に書く
+
+
+・スタイル継承(そんな重要じゃない)
+compose: 継承元のスタイル、を入れればcssでも継承みたいなことできる
+
+
+・CSS Modulesの設定オプション
+何言ってんの？
+
+・CSS-in-JS(Emotion) ＊Skip(いらない知識)
+
+・アニメーション機能を実装する(Motionをインストールする)
+npm install motionではなく、pnpm add motionでインストール
+paackage.jsonにmotionが入っているのを確認
+
+animate どこに移動させるか
+initial どこから始めるか
+transition 何秒かけて実行するか
+
+イベントに応じてアニメーションを実行する
+whileXxx属性
+
+・exit
+普通のReactでは消える瞬間にDOMから削除されてしまうため、AnimatePresenceを使う
+opacity 透明度 1は完全に見える状態
+
+・Repeat　回数を決められる
+・repeatType mirror,revere,loop
+・速度も決められる
+easeOut 早いから遅い
+easeIn 遅いから早い
+easeInOut 遅いから早いから遅い
+linear 一定速度
+
+
+・delay
+・repeatDelay
+
+・type バネのようなアニメーション
+
+
+MotionConfig...複数のコンポーネントをまとめる、全部に適用させる
+・bounce 跳ね具合 1に近いほど停止
+
+
+
+[variants属性]
+見やすくする　あらかじめ作ったアニメーションの設定をvariantsで呼び出す
+
+親子関係のある要素に適用する

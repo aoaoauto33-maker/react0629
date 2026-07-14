@@ -460,11 +460,209 @@
 
 
 
-// -4.7- 入力要素に応じたフォームの実装 -ファイル入力ボックス-
-import FormFile from "./components/ui/Reactkihon/FormFile";
+// // -4.7- 入力要素に応じたフォームの実装 -ファイル入力ボックス-
+// import FormFile from "./components/ui/Reactkihon/FormFile";
+
+// export default function App(){
+//   return(
+//     <FormFile />
+//   );
+// }
+
+
+
+
+
+// // -5- 入れ子のStateの場合
+// import StateNest from "./components/ui/Reactkihon/StateNest";
+
+// export default function App(){
+//   return(
+//     <StateNest />
+//   );
+// }
+
+
+
+
+
+
+
+// // -6.1- 配列の更新 -配列への追加-
+// // -6.2- 配列の更新 -配列の更新-
+// // -6.3- 配列の更新 -配列の削除-
+// // -6.4- 配列の更新 -配列の並び替え-？？？？？？？？？
+// import StateTodo from "./components/ui/Reactkihon/StateTodo";
+
+// export default function App(){
+//   return(
+//     <StateTodo />
+//   );
+// }
+
+
+
+
+
+
+// // -7- RHF -これは従来のReact-
+// import FormBasicUseState from "./components/ui/Reactkihon/FormBasicUseState";
+
+// export default function App(){
+//   return(
+//     <FormBasicUseState />
+//   );
+// }
+
+
+
+
+
+// // -7- RHF -React Hook Formの基本-
+// import FormBasic from "./components/ui/Reactkihon/FormBasic";
+
+// export default function App(){
+//   return(
+//     <FormBasic />
+//   );
+// }
+
+
+
+
+
+
+
+// // Reactおまけ
+// // -1- Yup
+// import FormYup from "./components/ui/ReactkihonOmake/FormYup";
+
+// export default function App(){
+//   return(
+//     <FormYup />
+//   );
+// }
+
+
+
+
+// チーム課題
+// import Event_Attendance_Management from "./components/ui/Event_Attendance_Management.tsx"
+
+// export default function App(){
+//   return(
+//     <Event_Attendance_Management />
+//   );
+// }
+
+
+
+
+
+
+
+// React応用
+// // -1- LazyとSuspense
+// import LazyBasic from "./components/ui/Reactoyo/LazyBasic";
+
+// export default function App(){
+//   return(
+//     <LazyBasic />
+//   );
+// }
+
+
+
+
+
+
+// // -2- Profiler
+// import ProfilerBasic from "./components/ui/Reactoyo/ProfilerBasic";
+
+// export default function App(){
+//   return(
+//     <ProfilerBasic />
+//   );
+// }
+
+
+
+
+// // -3- cssモジュール
+// import ModuleBasic from "./components/ui/Reactoyo/ModuleBasic";
+
+// export default function App(){
+//   return(
+//     <ModuleBasic />
+//   );
+//
+
+
+
+
+
+// // -4- motionBasic
+// // -4.4- motionBasicバネ
+// // -4.5- スタイルプロパティごとにtransitionを設定する
+// import MotionBasic from "./components/ui/Reactoyo/MotionBasic";
+
+// export default function App(){
+//   return(
+//     <MotionBasic />
+//   );
+// }
+
+
+// // -4.1- motionwhile
+// import MotionWhile from "./components/ui/Reactoyo/MotionWhile";
+
+// export default function App(){
+//   return(
+//     <MotionWhile />
+//   );
+// }
+
+
+// // -4.2- motionexit
+// import MotionExit from "./components/ui/Reactoyo/MotionExit";
+
+// export default function App(){
+//   return(
+//     <MotionExit />
+//   );
+// }
+
+
+// // -4.3- motionrepeat
+// import MotionRepeat from "./components/ui/Reactoyo/MotionRepeat";
+
+// export default function App(){
+//   return(
+//     <MotionRepeat />
+//   );
+// }
+
+
+// //-4.6- MotionAll　MotionConfigで複数の画像を動かそう
+// import MotionAll from "./components/ui/Reactoyo/MotionAll";
+
+// export default function App(){
+//   return(
+//     <MotionAll />
+//   );
+// }
+
+
+
+
+
+// -5- variants
+// -5.2- 親子関係にある要素に適用する
+import MotionNestVariants from "./components/ui/Reactoyo/MotionNestVariants";
+import MotionVariants from "./components/ui/Reactoyo/MotionVariants";
 
 export default function App(){
   return(
-    <FormFile />
+    <MotionNestVariants />
   );
 }

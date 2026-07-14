@@ -1,0 +1,14 @@
+---React基本おまけ---
+・Yup
+検証ルールをバラバラに埋め込むのはめんどいからYupを使う
+
+pnpm add @hookform/resolvers yup
+hookformは、yupとRHFを繋いでくれてる
+フィールド名: yup
+    .データ型()
+    .label(フィールドの日本語名)
+    .検証ルール(...)
+
+
+
+setLocaleメソッドを使うことでアプリのエラーを一元管理してくれる
