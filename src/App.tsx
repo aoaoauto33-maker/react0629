@@ -699,11 +699,26 @@
 
 
 
-// -6.2- ErrorBoundary
-import ErrorRoot from "./components/ui/Reactoyo/ErrorRoot";
+// // -6.2- ErrorBoundary
+// import ErrorRoot from "./components/ui/Reactoyo/ErrorRoot";
+
+// export default function App(){
+//   return(
+//     <ErrorRoot />
+//   );
+// }
+
+
+
+
+
+// -6.3- fallbackRender
+// -6.4- 代替コンテンツをコンポーネントとして切り出す
+// -6.5- イベントハンドラーからの例外をErrorBoundaryで処理できない
+import ErrorRetryRoot from "./components/ui/Reactoyo/ErrorRetryRoot";
 
 export default function App(){
   return(
-    <ErrorRoot />
+    <ErrorRetryRoot />
   );
 }
