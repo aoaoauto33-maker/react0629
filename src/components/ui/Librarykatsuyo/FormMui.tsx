@@ -9,6 +9,7 @@ type FormValues = {
     gender: 'male' | 'female';
     memo: string;
 };
+// フォームの入力値の型
 
 export default function FormMui() {
     // 既定値を準備
@@ -47,8 +48,11 @@ export default function FormMui() {
                         message: "名前は20文字以内にしてください",
                         },
                     })}
+                    // ...register(第一引数で名前を受け取る,第二引数でオブジェクトを受け取る)を展開
+                    // キー=オブジェクトにしてくれる、以下{}のオブジェクトを持ってきて展開している
                     error={!!errors.name}
                     helperText={errors.name?.message}
+                    // この2行はほぼ決まり文句
                 />
             </div>
             <div>

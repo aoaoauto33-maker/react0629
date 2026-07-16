@@ -1,6 +1,7 @@
 App.tsxから別のファイルにしたいときは、main.tsxのimportファイルを変える
 
 ---Reactライブラリ(誰かが作ってくれた便利な機能の集まり)の活用---
+[1.MUIの基本]
 MUI(マテリアルUI) いろんなwebサイトで使われている googleが作った
 (Reactを作ったのはmeta)
 ライブラリとして作られたコンポーネントをいっぱい提供してくれるライブラリ
@@ -44,3 +45,29 @@ Themeでスタイルに一貫性を持たせられる、オレンジって指定
 paletteでprimary,secondaryを囲って、一括で色を変えることができる[500]は色の濃さ
 spacing:で基準を変える
 main.tsxにthemeをimportさせて自作テーマに一貫性を持たせられる
+
+...register(第一引数で名前を受け取る,第二引数でオブジェクトを受け取る)を展開
+
+
+
+
+
+[2.コンポーネントの見た目・動作をカタログ表示する]
+Stroybookを使うことによって、コンポーネントの仕様などを把握できる、見やすくて便利
+なぜStroybookが必要なのか？ => デザイナーや非エンジニアに見せやすくするため
+
+・まずはStroybookを入れよう
+npx storybook@latest init
+y押す => esbuild => yes => no => no
+最後に以下の文が出ればok
+To run Storybook, run pnpm run storybook. CTRL+C to stop.
+
+npxはインストールせずに、その場限りの時に使うコマンド
+pnpmは買う、npxは一回しか使わないから借りよう、の違い
+.storybook(設定情報)やstoriesフォルダが作られているか確認
+pnpm run storybookと入力する
+エラーが出たらpnpm approve-buildsと打ってからもう一度pnpm run storybook
+
+
+・MyButton.tsx（ボタン本体）
+MyButton.stories.tsx（Storybookで表示する設定）
