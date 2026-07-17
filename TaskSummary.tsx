@@ -1,7 +1,6 @@
 import React from 'react';
 import { type Task } from './types';
 import { Panel } from './Panel';
-import { subStyles } from './styles';
 
 interface TaskSummaryProps {
   tasks: Task[];
@@ -17,10 +16,10 @@ export function TaskSummary({ tasks }: TaskSummaryProps) {
 
   return (
     <Panel title="[集計]">
-      <p style={subStyles.summaryText(overdue > 0)}>
-        タスク: <strong>{total}</strong>件 / 
-        完了: <strong>{completed}</strong>件 ({percent}%) / 
-        期限切れ: <strong style={subStyles.overdueCount(overdue > 0)}>{overdue}</strong>件
+      <p>
+        タスク: {total}件 / 
+        完了: {completed}件 ({percent}%) / 
+        期限切れ: {overdue}件
       </p>
     </Panel>
   );

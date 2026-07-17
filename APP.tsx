@@ -4,7 +4,6 @@ import { TaskSummary } from './TaskSummary';
 import { TaskFilter } from './TaskFilter';
 import { TaskList } from './TaskList';
 import { TaskForm } from './TaskForm';
-import { appStyles } from './styles';
 
 export function App() {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -48,10 +47,8 @@ export function App() {
     });
 
   return (
-    <div style={appStyles.container}>
-      <h2 style={appStyles.header}>
-        TeamTasks
-      </h2>
+    <div>
+      <h2>TeamTasks</h2>
       
       <TaskSummary tasks={tasks} /> 
       

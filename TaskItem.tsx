@@ -1,6 +1,5 @@
 import React from 'react';
 import { type Task } from './types';
-import { subStyles } from './styles';
 
 interface TaskItemProps {
   task: Task;
@@ -24,37 +23,31 @@ export function TaskItem({ task, onToggle, onDelete }: TaskItemProps) {
   };
 
   return (
-    <li style={subStyles.listItem(task.done)}>
-      <div style={subStyles.itemRow}>
-        <label style={subStyles.itemLabel(task.done)}>
+    <li>
+      <div>
+        <label>
           <input 
             type="checkbox" 
             checked={task.done} 
             onChange={() => onToggle(task.id)} 
-            style={subStyles.itemCheckbox}
           />
-          <span style={subStyles.itemText(task.done)}>
-            {task.title}
-          </span>
+          <span>{task.title}</span>
         </label>
         
-        <div style={subStyles.itemMeta}>
-          <span>[{task.priority}]</span>
-          <span>期限: {formatMMDD(task.dueDate)}</span>
-          {isOverdue && <span style={subStyles.overdueBadge}>⚠️期限切れ</span>}
-          <button 
-            type="button" 
-            onClick={handleCancelClick}
-            style={subStyles.deleteButton}
-          >
-            [削除]
-          </button>
-        </div>
+        <span>
+          優先度:{task.priority} | 
+          期限: {formatMMDD(task.dueDate)} 
+          {isOverdue && " (期限切れ)"}
+        </span>
+
+        <button type="button" onClick={handleCancelClick}>
+          削除
+        </button>
       </div>
       {task.memo && (
-        <p style={subStyles.memoText}>
+        <div>
           担当: {task.assignee} | メモ: {task.memo}
-        </p>
+        </div>
       )}
     </li>
   );

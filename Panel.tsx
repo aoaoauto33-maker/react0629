@@ -1,5 +1,4 @@
 import React from 'react';
-import { panelStyles } from './styles';
 
 interface PanelProps {
   title: string;
@@ -8,8 +7,8 @@ interface PanelProps {
 
 export function Panel({ title, children }: PanelProps) {
   return (
-    <div style={panelStyles.container}>
-      <h3 style={panelStyles.title}>{title}</h3>
+    <div>
+      <h3>{title}</h3>
       {children}
     </div>
   );
