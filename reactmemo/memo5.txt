@@ -1,6 +1,6 @@
 App.tsxから別のファイルにしたいときは、main.tsxのimportファイルを変える
 
----Reactライブラリ(誰かが作ってくれた便利な機能の集まり)の活用---
+---25.Reactライブラリ(誰かが作ってくれた便利な機能の集まり)の活用---
 [1.MUIの基本]
 MUI(マテリアルUI) いろんなwebサイトで使われている googleが作った
 (Reactを作ったのはmeta)
@@ -71,3 +71,16 @@ pnpm run storybookと入力する
 
 ・MyButton.tsx（ボタン本体）
 MyButton.stories.tsx（Storybookで表示する設定）
+
+
+
+
+
+‼️超重要
+---26.続Reactライブラリ(誰かが作ってくれた便利な機能の集まり)の活用---
+本格的なアプリでは、アプリから外部サービスにアクセスし、データを取得することはよくある
+
+まずこれを実行
+curl "https://api.open-meteo.com/v1/forecast?latitude=35.6895&longitude=139.6917&current_weather=true"
+curl=http先のデータをもらうコマンド
+普段はwebブラウザが裏でやってくれていることを自分でやってみただけ
