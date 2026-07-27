@@ -1,0 +1,19 @@
+---Reactフック(応用)---
+
+・Jotaiとは...大規模になったらもっと管理しやすくしたい、時に使う？
+Atom = Jotaiの中心となる仕組み、Stateみたいなもの
+AtomにはReact管理下の任意のコンポーネント階層からアクセス可能＊コンテキストに似てる
+
+まずはインストールしよう
+pnpm add Jotai　=> 成功
+
+export const counterAtom = atom(0);
+const [counter, setCounter ] = useAtom(counterAtom);
+Atomを定義するにはatom関数に対して初期値を渡すだけ
+他のファイルとも共有できるState、propsなしでも値を受け渡しできるStateみたいな
+状態ライブラリとして管理している？
+
+・atomWithReset...リセット可能なatom関数
+使うときにuseAtomとuseResetAtomが必要
+
+at(-1) = 配列の最後の要素を取得する

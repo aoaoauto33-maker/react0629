@@ -32,7 +32,7 @@ export interface MyTextBoxHandle{
 type MyTextBoxProps = {
     label: string;
     ref?: React.Ref<MyTextBoxHandle>;
-    // 親に公開するリモコンの中の処理を型に
+    // 親に公開するリモコンの中の処理を型に、このrefは名前なんでもいい(props)
 };
 
 
@@ -55,6 +55,7 @@ export default function MyTextBox({label, ref}: MyTextBoxProps){
         <label>
             {label}:
             <input type="text" size={15} ref={inputRef} />
+            {/* このrefは名前変えちゃダメ、Reactのref属性 */}
 
         </label>
     );

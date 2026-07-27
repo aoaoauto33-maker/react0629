@@ -61,9 +61,65 @@
 // }
 
 
-// -8.useImperativeHandle - 関数コンポーネント配下のメソッドを参照する-
-import ParentForm from "./components/ui/Reacthook/ParentForm";
+// // -8.useImperativeHandle - 関数コンポーネント配下のメソッドを参照する-
+// import ParentForm from "./components/ui/Reacthook/ParentForm";
+
+// export default function App3() {
+//   return <ParentForm/>;
+// }
+
+
+
+// // -9.1コールバック関数をref属性に引き渡す-(コールバックじゃないバージョン)
+// // -9.2コールバック関数をref属性に引き渡す-
+// import HookCallbackRef from "./components/ui/Reacthook/HookCallbackRef";
+
+// export default function App3() {
+//   return <HookCallbackRef />;
+// }
+
+
+
+// // -10.useReducerフックの基本-
+// import HookReducer from "./components/ui/Reacthook/HookReducer";
+
+// export default function App3() {
+//   return <HookReducer init={0} />;
+// }
+
+
+// // -11.Reducerを複数のAction型に対応する-
+// import HookReducerUp from "./components/ui/Reacthook/HookReducerUp";
+
+// export default function App3() {
+//   return <HookReducerUp init={0} />;
+// }
+
+
+
+// // 課題
+// import KadaiReducer from "./components/ui/Kadai/KadaiReducer";
+
+// export default function App3() {
+//   return <KadaiReducer />;
+// }
+
+
+
+// // コンテキストの基本
+// import HookContext from "./components/ui/Reacthook/HookContext";
+
+// export default function App3() {
+//   return <HookContext />;
+// }
+
+
+
+
+// 1.状態を管理する「Atom」
+// カウンターにリセット機能を追加
+import JotaiCounter from "./components/ui/ReacthookOyo/JotaiCounter";
 
 export default function App3() {
-  return <ParentForm/>;
+  return <JotaiCounter />;
 }
