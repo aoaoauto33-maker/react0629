@@ -17,7 +17,7 @@ type FormData = {
 };
 
 type Props = {
- onAdd: (question:Question)=>void;
+    onAdd: (question: Question)=>void;
 };
 
 const schema = 
@@ -96,7 +96,7 @@ const submit = (data:FormData)=>{
         {id:crypto.randomUUID(), label:data.choice4}
 ];
 
-const question:Question={
+const question: Question={
  id: crypto.randomUUID(),
  text: data.text, choices,
  correctChoiceId: choices[data.correct-1].id,

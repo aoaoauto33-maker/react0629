@@ -16,17 +16,12 @@ export default function ResultScreen({ score, total, elapsedTime, wrongQuestions
   return (
     <div>
       <h2>結果</h2>
-
       <p>正答数：{score} / {total}</p>
-
       <p>正答率：{accuracy}%</p>
-
       <p>所要時間：{(elapsedTime / 1000).toFixed(1)}秒</p>
-
       <hr />
 
       <h3>復習リスト</h3>
-
       {wrongQuestions.length === 0 ? (
         <p>全問正解です！</p>
       ) : (

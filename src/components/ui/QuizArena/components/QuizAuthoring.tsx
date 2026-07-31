@@ -1,5 +1,4 @@
-// src/components/ui/QuizArena/components/QuizAuthoring.tsx
-import { useState } from "react";
+// ユーザーが新しく登録した問題を保存する
 import type { Question } from "../types";
 import QuestionForm from "./QuestionForm";
 import QuestionList from "./QuestionList";
@@ -10,7 +9,7 @@ type Props = {
 };
 
 export default function QuizAuthoring({questions, setQuestions}:Props){
-  const addQuestion = ( question:Question)=>{
+  const addQuestion = ( question: Question)=>{
     setQuestions(prev=>[...prev, question]);
   };
 

@@ -31,9 +31,7 @@ export default function QuestionScreen({
       )}
 
       <h2>{question.text}</h2>
-
       <p>カテゴリ：{question.category}</p>
-
       <div>
         {question.choices.map((choice) => (
           <button
@@ -55,7 +53,6 @@ export default function QuestionScreen({
           <hr />
 
           <h3>{isCorrect ? "⭕ 正解！" : "❌ 不正解"}</h3>
-
           <p>{question.explanation}</p>
 
           <button onClick={onNext}>

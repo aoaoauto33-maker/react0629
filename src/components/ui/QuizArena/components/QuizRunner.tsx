@@ -1,4 +1,4 @@
-// src/components/ui/QuizArena/components/QuizRunner.tsx
+// 
 import { useReducer } from "react";
 import type { Question } from "../types";
 import StartScreen from "./StartScreen";
@@ -105,8 +105,10 @@ type Props = {
   questions: Question[];
 };
 
+// AppQでState管理しているquestions(問題一覧)を受け取る
 export default function QuizRunner({ questions }: Props) {
   const [state, dispatch] = useReducer(reducer, initialState);
+  // 画面の状態管理と処理をuseReducerで行う(開始前、出題中、回答済み、結果画面など)
 
   const handleStart = (selectedQuestions: Question[]) => {
     dispatch({ type: "START", payload: selectedQuestions });

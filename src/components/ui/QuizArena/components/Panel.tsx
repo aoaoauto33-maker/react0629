@@ -1,4 +1,4 @@
-// src/components/ui/QuizArena/components/Panel.tsx
+// ただの共通レイアウト
 
 type Props = {
   title:string;
