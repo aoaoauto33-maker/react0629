@@ -1,5 +1,4 @@
-// src/components/ui/QuizArena/components/QuestionScreen.tsx
-
+// 1問分の問題を表示し、ユーザーの回答を受け付ける画面
 import type { Question } from "../types";
 import Timer from "./Timer";
 
@@ -38,10 +37,7 @@ export default function QuestionScreen({
             key={choice.id}
             onClick={() => onSelect(choice.id)}
             disabled={status === "answered"}
-            style={{
-              display: "block",
-              marginBottom: "8px",
-            }}
+            // disabled = 回答後は押せない
           >
             {choice.label}
           </button>

@@ -1,12 +1,14 @@
-// 
+// クイズ画面の中で今どの画面を表示するべきかをコントロールするコンポーネント
 import { useReducer } from "react";
 import type { Question } from "../types";
 import StartScreen from "./StartScreen";
 import QuestionScreen from "./QuestionScreen";
 import ResultScreen from "./ResultScreen";
 
+// 画面遷移を管理する型(開始前、回答中、回答結果、最終結果)
 type Status = "idle" | "playing" | "answered" | "finished";
 
+// 画面やクイズの状態を一括管理するstateの型
 type State = {
   status: Status;
   questions: Question[];
@@ -19,6 +21,7 @@ type State = {
   elapsedTime: number;
 };
 
+// reducerに渡すactionの型
 type Action =
   | { type: "START"; payload: Question[] }
   | { type: "SELECT"; payload: string }
@@ -26,6 +29,7 @@ type Action =
   | { type: "NEXT" }
   | { type: "RESTART" };
 
+ // stateの初期値
 const initialState: State = {
   status: "idle",
   questions: [],
@@ -39,7 +43,9 @@ const initialState: State = {
 };
 
 function reducer(state: State, action: Action): State {
+    // Reducer = Actionを受け取って、新しいStateを返す関数
   switch (action.type) {
+    // STARTを押すと必ずこの処理が入る(statusがplayingになるので強制的にQuestionScreenへ)
     case "START":
       return {
         ...initialState,
@@ -48,9 +54,11 @@ function reducer(state: State, action: Action): State {
         startTime: Date.now(),
       };
 
+    // ユーザーが選択肢を押した時の処理
     case "SELECT": {
       const current = state.questions[state.currentIndex];
       const isCorrect = current.correctChoiceId === action.payload;
+      // ユーザーが選んだ回答(action.payload)が正解か判定している 
 
       return {
         ...state,
@@ -62,6 +70,7 @@ function reducer(state: State, action: Action): State {
       };
     }
 
+    // 時間切れ処理
     case "TIMEOUT": {
       const current = state.questions[state.currentIndex];
 
@@ -74,9 +83,11 @@ function reducer(state: State, action: Action): State {
       };
     }
 
+    // 次の問題へ移る処理
     case "NEXT": {
       const nextIndex = state.currentIndex + 1;
 
+     // 最後の問題だったら結果画面(ResultScreen)に遷移
       if (nextIndex >= state.questions.length) {
         return {
           ...state,
@@ -84,11 +95,11 @@ function reducer(state: State, action: Action): State {
           elapsedTime: Date.now() - state.startTime,
         };
       }
-
+     // esle
       return {
         ...state,
         status: "playing",
-        currentIndex: nextIndex,
+        currentIndex: nextIndex,   /* 実際に問題を切り替えている部分 */
         selectedChoiceId: undefined,
         isCorrect: undefined,
       };
@@ -97,10 +108,15 @@ function reducer(state: State, action: Action): State {
     case "RESTART":
       return initialState;
 
+    // 安全のためdefaultを設置
     default:
       return state;
   }
 }
+
+
+
+
 type Props = {
   questions: Question[];
 };
@@ -130,6 +146,7 @@ export default function QuizRunner({ questions }: Props) {
     dispatch({ type: "RESTART" });
   };
 
+  // statusによって表示する画面を決めたいのでifでreturnを分ける(3パターン)
   if (state.status === "idle") {
     return (
       <StartScreen
