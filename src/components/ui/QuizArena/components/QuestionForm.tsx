@@ -79,9 +79,7 @@ yup.object({
  return new Set(choices).size===4;
 });
 
-export default function QuestionForm({
- onAdd
-}:Props){
+export default function QuestionForm({ onAdd }:Props){
 
 const {register,handleSubmit,reset,formState:{errors}}=useForm<FormData>({
  resolver:yupResolver(schema),
@@ -97,7 +95,8 @@ const submit = (data:FormData)=>{
 ];
 
 const question: Question={
- id: crypto.randomUUID(),
+ id: crypto.randomUUID(), 
+ // crypto.randomUUID()は、重複しにくい一意なID（UUID）を自動生成するJavaScriptの機能
  text: data.text, choices,
  correctChoiceId: choices[data.correct-1].id,
  explanation: data.explanation,

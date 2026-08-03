@@ -1,6 +1,4 @@
 // choices.tsは初期データを入れておくためだけのファイル
-// src/components/ui/QuizArena/datas/choices.ts
-
 import type { Choice } from "../types";
 
 export const reactChoices: Choice[] = [
