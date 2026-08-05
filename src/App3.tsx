@@ -116,10 +116,74 @@
 
 
 
-// 1.状態を管理する「Atom」
-// カウンターにリセット機能を追加
-import JotaiCounter from "./components/ui/ReacthookOyo/JotaiCounter";
+// // 1.状態を管理する「Atom」
+// // 1.2カウンターにリセット機能を追加
+// import JotaiCounter from "./components/ui/ReacthookOyo/JotaiCounter";
+
+// export default function App3() {
+//   return <JotaiCounter />;
+// }
+
+
+
+// // 1.3 既存のAtomの演算/加工結果を返す(派生Atom)
+// // 1.4 既存のAtomへの更新コードを定義する
+// // 1.補足 Todoリストをストレージに保存する
+// import JotaiTodoUp from "./components/ui/ReacthookOyo/JotaiTodo";
+// import JotaiTodo from "./components/ui/ReacthookOyo/JotaiTodo";
+
+// export default function App3() {
+//   return <JotaiTodoUp />;
+// }
+
+
+
+// // 2.Atomの値の有効範囲を制限す/Storeで複数のAtom値を束ねる（Store/Provider）
+// import JotaiCounter from "./components/ui/ReacthookOyo/JotaiCounter";
+// import { Provider, createStore } from "jotai";
+
+// export default function App3() {
+//   const store= createStore();
+//   return (
+//   <>
+//     <Provider store={store}>
+//       <JotaiCounter />
+//     </Provider>
+//     <Provider>
+//       <JotaiCounter />
+//     </Provider>
+//     <Provider store={store}>
+//       <JotaiCounter />
+//     </Provider>
+//   </>
+
+//   );
+// }
+
+
+
+
+// // 3.1 メモ化のためのサンプル
+// // 3.2 関数の結果をメモ化する(useMemo)
+// import HookMemo from "./components/ui/ReacthookOyo/HookMemo";
+
+// export default function App3() {
+//   return <HookMemo />;
+// }
+
+
+
+// // 4.1優先順位の低いState更新を区別する(useTransition)
+// import HookTransition from "./components/ui/ReacthookOyo/HookTransition";
+
+// export default function App3() {
+//   return <HookTransition />;
+// }
+
+
+// 4.4 特定の値の「遅延バージョン」を生成する(useDeferredValue)
+import HookDeferred from "./components/ui/ReacthookOyo/HookDeferred";
 
 export default function App3() {
-  return <JotaiCounter />;
+  return <HookDeferred />;
 }

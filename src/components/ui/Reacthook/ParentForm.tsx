@@ -7,10 +7,14 @@ export default function ParentForm() {
   const nameBoxRef = useRef<MyTextBoxHandle>(null);
   //   MyTextBoxHandleにはfocusが入っている、リモコンを作っている段階
 
+  // イベントハンドラー
   const handleFocusClick = () => {
     // MyTextBox内部のinputに直接フォーカスを当てる
     nameBoxRef.current?.focus();
   };
+// export interface MyTextBoxHandle{
+//     focus: () => void;
+// }これのfocusにアクセスしてるだけ(実際にinputには触れてない)
 
   return (
     <div>

@@ -1,0 +1,21 @@
+JotaiでatomWithResetを使う？
+useEffectでクリーンアップ？を行う
+useReducerで状態と操作の管理をまとめて行う
+
+App(親コンポーネント)
+types.ts(問題、選択肢、問題カテゴリーの型がまとめられたファイル)
+datas/questions.ts(問題の初期値データが入ったファイル)最低８問
+datas/choices.ts(選択肢の初期値データががまとめられたファイル)最低８問
+
+・一部だけをgithubに登録したい場合はsubtreeを使うべし
+git remote add quizarena git@github.com:aoaoauto33-maker/QuizArena_B.git
+git remote -v
+git add src/components/ui/QuizArena
+git status
+git commit -m "Add QuizArena"
+git subtree push --prefix=src/components/ui/QuizArena quizarena main
+
+
+・関数だけ抜き出して別ファイルに入れるメリットは？
+テストで関数を見るときにやりやすい
+別のコンポーネントから呼び出して再利用できる

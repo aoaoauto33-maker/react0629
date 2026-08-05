@@ -58,5 +58,6 @@ export default function MyThemeProvider({children}: MyThemeProviderProps) {
                 {/* children = <HookThemeButton /> */}
             </ThemeProvider>
         </ThemeContext>
+        // React19では、このContextオブジェクト自体をJSXタグとして書けるようになった
     );
 }

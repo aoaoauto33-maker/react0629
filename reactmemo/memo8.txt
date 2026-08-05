@@ -1,0 +1,35 @@
+Reactフック(実践)
+
+・useActionState関数(めちゃむず)　便利だけど唯一無二ではない(react-hook-formとか)
+1 フォーム送信の状態管理（読み込み中、結果、エラー）をめちゃくちゃ楽に
+してくれるツール
+2「フォーム送信中、ボタンを連打できないようにする」「送信中はローディン
+グ表示をする」といった処理を、自分でuseStateを組み合わせて作らなくて
+も、一括で提供してくれる
+3「フォームが今どういう状況か？」をいちいちプログラミングしなくても、
+Reactがスマートに面倒を見てくれる機能
+
+useActionStateを使うと、以下の3つをセットで自動管理してくれる
+State(結果),Action(実行関数),Pending(isLoadingと同じ)
+初期値に入れるのはStateの分だけ
+
+useActionStateを使わないパターンも３つやる、これでuseActionState
+の有用性を学べる
+
+・FormData = グローバルな環境で使えるやつ(importいらない)
+
+・useTransition、useReducer,React-Hook-Form版と見比べよう
+1.useTransition...updateFormで非同期処理を行い、その後のsetBooks
+やsetErrorsによる状態更新・再レンダリングを低優先度として扱う
+2.useReducer...もっと複雑な処理に使った方がいい、無駄にコードが長いかも
+3.React-Hook-Form...registerで入力部分の管理を楽にする復習して
+
+・useOptimistic 楽観的更新を実装する
+(非同期)処理が成功しているかどうかはわからないが、とりあえず画面上は
+成功したことにして更新してしまおう！失敗する確率は低いので、「万が一
+失敗したら元に戻せばいいよね」というもの
+一時的に表示してほしいものを管理する
+useOptimistic(state, updateFn)
+state: 楽観的StateのもととなるState(実際のデータ)
+updateFn: 楽観的Stateを更新するための関数(仮のデータをどうやって
+表示する？っていう関数)

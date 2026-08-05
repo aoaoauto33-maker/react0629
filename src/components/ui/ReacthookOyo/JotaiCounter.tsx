@@ -1,5 +1,6 @@
 // 1.状態を管理する「Atom」
 // カウンターにリセット機能を追加
+// 2.Atomの値の有効範囲を制限す/Storeで複数のAtom値を束ねる（Store/Provider）
 import { useAtom } from "jotai";
 import { counterAtom } from "../../../store/atom";
 import { useResetAtom } from "jotai/utils";

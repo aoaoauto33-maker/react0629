@@ -77,6 +77,7 @@ yup.object({
   value.choice4
  ];
  return new Set(choices).size===4;
+ // Set 重複ダメ、重複がないとsize === 4になる
 });
 
 export default function QuestionForm({ onAdd }:Props){
