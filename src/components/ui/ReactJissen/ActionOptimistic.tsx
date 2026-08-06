@@ -1,6 +1,8 @@
 // 2. 楽観的更新を実装する(useOptimistic)
 import { useActionState, useOptimistic, useState } from "react";
 import { updateForm, type UpdateFormProps } from "./action";
+import ActionSpinner from "./ActionSpinner";
+
 
 export default function ActionOptimistic() {
     // 1. サーバーで確定したデータの管理（真実のソース）
@@ -58,6 +60,8 @@ export default function ActionOptimistic() {
 
     return (
         <form noValidate action={submitAction}>
+            {/* 3. フォームの状態を監視する(useFormStatus) */}
+            <ActionSpinner />
             {/* エラーメッセージをリスト表示 */}
             <ul>
                 {error?.map(msg => <li key={msg}>{msg}</li>)}

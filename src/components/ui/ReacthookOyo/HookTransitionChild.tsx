@@ -35,7 +35,7 @@ type CommentListProps = {
     src: Comment[];
     // srcにComment型を配列にして入れる
     isPending: boolean;
-    // pending = 未解決
+    // pending = 保留
 }
 
 // コメント一覧表示の変数

@@ -80,6 +80,6 @@ export function updateForm({id, title, price, published}: UpdateFormProps): Prom
                     errors: null
                 });
             }
-        }, 10000);
+        }, 5000);
     });
 }

@@ -24,6 +24,10 @@ useActionStateを使わないパターンも３つやる、これでuseActionSta
 2.useReducer...もっと複雑な処理に使った方がいい、無駄にコードが長いかも
 3.React-Hook-Form...registerで入力部分の管理を楽にする復習して
 
+
+-------------------
+
+
 ・useOptimistic 楽観的更新を実装する
 (非同期)処理が成功しているかどうかはわからないが、とりあえず画面上は
 成功したことにして更新してしまおう！失敗する確率は低いので、「万が一
@@ -33,3 +37,82 @@ useOptimistic(state, updateFn)
 state: 楽観的StateのもととなるState(実際のデータ)
 updateFn: 楽観的Stateを更新するための関数(仮のデータをどうやって
 表示する？っていう関数)
+
+
+-------------------
+
+
+・useFormStatus フォームの状態を監視する
+useFormStatus()はオブジェクトを返す
+const { pending } = useFormStatus();
+送信前ならこのオブジェクトを返す
+{
+  pending: false
+}
+送信中ならこっちのオブジェクトを返す
+{
+  pending: true
+}
+関数云々は一切見てなくて、処理中かどうかだけしか見ていない
+単純に<form>の中が処理中かどうかだけ見たい時に使う
+Reactが勝手に今この<form>の中にいますよ、と教えてくれる
+
+この4つの値を受け取れる ほぼpendingしか使わない
+const { pending, data, method, action } = useFormStatus();
+1. pending: フォームが処理中かどうか
+2. data: 送信中のフォーム値(FormDataオブジェクト)
+3. method: 送信メソッド(get, post)
+4. action: <form>要素のaction属性に渡されたアクション関数
+
+pendingが切り替わる流れ
+1. フォームが送信される(action={submitAction} が呼ばれる)
+        ↓
+2. Reactが、この<form>を「送信中(pending)」の状態として、内部的にマークする
+        ↓
+3. <form>の内側にある ActionSpinner が、
+   useFormStatus() を通じて、この「送信中」という情報を検知する
+        ↓
+4. pending が true になる
+        ↓
+5. <p hidden={!pending}> の hidden 属性が false になり、
+   ローディング画像が表示される
+        ↓
+6. submitAction の非同期処理(updateForm)が完了する
+        ↓
+7. Reactが、<form>の「送信中」マークを解除する
+        ↓
+8. ActionSpinnerも自動的にこれを検知し、pendingがfalseに戻る
+        ↓
+9. ローディング画像が、再び非表示になる
+
+
+
+-------------------
+
+
+・フックの自作 自分で作りたい(めっちゃ便利じゃね？)
+自作Hookは「状態管理と、その状態を操作するロジックをセットにして再利用
+するための関数」
+
+ReactにはHooksのルールがある
+✅ コンポーネントの中
+✅ 自作Hook（useで始まる関数）の中
+でしかHookを呼べない
+=> React Hooksは普通の関数には書けないので、再利用したいときは自作
+Hookとして切り出す
+
+自作フックも普通の関数なのになんでuseReducerを使えているの？
+1.関数名がuseなんたら(useCounterなど)の形式
+2.関数内では他のフックを利用していること
+3.コンポーネントで再利用したい値/コードを戻り値として返すこと
+(if文で呼び出すフックの順番を変えていないことも大事)
+この3つを守ってるので、Reactはこれを「自作Hook」として扱える
+
+-------------------
+・コンポーネントと普通の関数を見分ける方法は？
+関数名の頭文字が大文字(HookCustomなど)
+JSXを返している( <div>{hello}</div> や nullなど)
+<HookCustom />で呼び出す(普通はhookCustom()で呼び出す)
+
+自作フックはstate、配列、関数、オブジェクトを返す
+-------------------
