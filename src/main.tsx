@@ -5,14 +5,14 @@ import { createRoot } from 'react-dom/client'
 
 import {ThemeProvider, CssBaseline} from "@mui/material";
 import theme from './/components/ui/Librarykatsuyo/theme.ts';
-import App4 from './App4.tsx';
+import App2 from './App2.tsx';
 
 
 createRoot(document.getElementById('root')!).render(
   // <StrictMode>
     <ThemeProvider theme={theme}>
       // {/* <CssBaseline /> */}
-      <App4 />
+      <App2 />
     </ThemeProvider>
   // </StrictMode>,
 )

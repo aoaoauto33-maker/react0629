@@ -44,15 +44,25 @@
 
 
 
-// // -1.7- React Hook FormとMUIを連携する
-import FormMui from "./components/ui/Librarykatsuyo/FormMui";
+// // // -1.7- React Hook FormとMUIを連携する
+// import FormMui from "./components/ui/Librarykatsuyo/FormMui";
+
+// export default function App(){
+//   return(
+//     <FormMui />
+//   );
+// }
+
+
+
+
+// ---26.続Reactライブラリ(誰かが作ってくれた便利な機能の集まり)の活用---
+// 1.SWRを利用しない例
+import SWRPre from "./components/ui/LibrarykatsuyoZoku/SWRPre";
 
 export default function App(){
   return(
-    <FormMui />
+    <SWRPre />
   );
 }
-
-
-
 

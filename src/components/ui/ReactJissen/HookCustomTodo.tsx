@@ -1,35 +1,3 @@
-// import { useState } from "react";
-// import useTodo from "./useTodo";
-
-// export default function HookCustomTodo() {
-//     const [todos, handleAdd, handleDelete, handleToggle] = useTodo();
-//     const [text, setText] = useState("");
-
-//     const addTodo = () => {
-//         if (!text) return;
-//         handleAdd({ id: crypto.randomUUID(), text, isDone: false });
-//         setText("");
-//         // 入力欄をリセット
-//     };
-
-//     return (
-//         <>
-//             <input value={text} onChange={(e) => setText(e.target.value)} />
-//             <button onClick={addTodo}>追加</button>
-
-//             <h3>Todoリスト一覧</h3>
-//             {todos.map((todo) => (
-//                 <div key={todo.id} style={{ display:"flex"}}>
-//                     <p style={{ margin:0 }}>{todo.isDone ? <s>{todo.text}</s> : todo.text}</p>
-//                     <button onClick={() => handleToggle(todo.id)}>{todo.isDone ? "未" : "済"}</button>
-//                     <button onClick={() => handleDelete(todo.id)}>削除</button>
-//                 </div>
-//             ))}
-//         </>
-//     );
-// }
-
-
 import { useState } from "react";
 import useTodo from "./useTodo";
 

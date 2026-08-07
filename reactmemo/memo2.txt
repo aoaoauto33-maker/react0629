@@ -40,6 +40,12 @@ let copyobj = obj;じゃダメなの？ =>参照先が一緒になため、値�
 ・RHFとはフォームの値、エラー、送信処理をReactのStateを書かずに管理してくれるライブラリ
 register... バリデーションとか
 
+まずはライブラリなのでインストールしよう
+pnpm add react-hook-form
+
+・useStateでバリデーションをつけようとすると、長いしだるい
+e.preventDefault();...ブラウザが本来行うデフォルトの動きを止めるメソッド
+
 ・独自でルールを追加したいとき
 validateをhtmlの方につけて、アロー関数を書くだけ
 <input
